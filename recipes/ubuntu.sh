@@ -8,7 +8,6 @@
 # Contributions from: Wayne E. Seguin <wayneeseguin@gmail.com>
 # Contributions from: Ryan McGeary <ryan@mcgeary.org>
 #
-
 ruby_version=$1
 ruby_version_string=$2
 ruby_source_url=$3
@@ -42,8 +41,12 @@ sudo $pm -y install \
     libtool >> $log_file 2>&1
 echo "==> done..."
 
-echo -e "\n=> Installing libs needed for sqlite and mysql..."
-sudo $pm -y install libsqlite3-0 sqlite3 libsqlite3-dev libmysqlclient-dev >> $log_file 2>&1
+echo -e "\n=> Installing libs needed for mysql..."
+sudo $pm -y install mysql-server-5.5 mysql-client-5.5 libmysqlclient-dev >> $log_file 2>&1
+echo "==> done..."
+
+echo -e "\n=> Installing libs needed for mysql..."
+sudo $pm -y install apache2 >> $log_file 2>&1
 echo "==> done..."
 
 # Install imagemagick
