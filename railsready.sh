@@ -56,10 +56,10 @@ else
 fi
 
 #now check if user is root
-if [ $script_runner == "root" ] ; then
-  echo -e "\nThis script must be run as a normal user with sudo privileges\n"
-  exit 1
-fi
+#if [ $script_runner == "root" ] ; then
+#  echo -e "\nThis script must be run as a normal user with sudo privileges\n"
+#  exit 1
+#fi
 
 echo -e "\n\n"
 echo "run tail -f $log_file in a new terminal to watch the install"
